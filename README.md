@@ -1,2 +1,2 @@
-# amazon-product-listing-analyzer
-A
+#Amazon Product Listing Analyzer
+
