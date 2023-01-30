@@ -12,4 +12,5 @@
 </ul>
 <h2>Screenshots</h2>
 <img src="/screenshots/apla-home.jpg" alt="Home">
+<img src="/screenshots/apla-about.jpg" alt="About">
 <img src="/screenshots/apla-analyze-result.jpg" alt="Result">
