@@ -10,3 +10,6 @@
   <li>Provides ranking and recommendations based on the Amazon's A+ content guidelines.</li>
   <li>Uses AJAX request to reduce the server load.</li>
 </ul>
+<h2>Screenshots</h2>
+<img src="/screenshots/apla-home.jpg" alt="Home">
+<img src="/screenshots/apla-analyze-result.jpg" alt="Result">
