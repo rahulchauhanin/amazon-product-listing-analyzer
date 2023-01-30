@@ -1,0 +1,201 @@
+<div class="header-bold"><h3>Details &amp; Recommendations</h3></div>
+<!--<Product Title>-->
+<div class="col-12 mobile-padding-none" id="titleId" style="padding-top: 20px;">
+    <div class=" col-lg-4 col-md-5 col-12">
+        <h5 class="Bold">Product Title<span style="float: right;">{% widthratio title|length 210 100 %}/100</span></h5>
+        <div class="progress progress-radius-bg mb-3">
+            <div class="progress-bar {% if title|length <= 76 %} bg-warning {% else %} bg-success {% endif %}" role="progressbar" aria-valuenow="{% widthratio title|length 210 100 %}" aria-valuemin="0" aria-valuemax="100"  style="width:{% widthratio title|length 210 100  %}%"></div>
+        </div>
+    </div>
+    <div class="  col-12">
+        <div class="col-12 " style="overflow-x: auto; padding: 0;">
+            <table class="table table-striped lxrtool-table " style="min-width: 500px !important;">
+                <thead> <tr><th class="text-left  recommended-width">Title Length</th><th class="text-left ">Recommended</th><th class="text-left ">Improvements Tips</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="col-2">
+                            <span>{{ title|length }}</span>
+                        </td>
+                        <td class="col-2">190-210</td>
+                        <td class="col-8 col-lg-8">
+                            <span>{{ title }}</span>
+                            <p class="text-primary"><em>Tip: You can add more details to the Title to increase it to optimized length. Try to include more product related keywords that you are targeting and you will see more qualified traffic to your listing!</em></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<Product Description>-->
+<div class="col-12 mobile-padding-none" id="descriptionId" style="padding-top: 20px;">
+    <div class="col-lg-4 col-md-5 col-12">
+        <h5 class="Bold">Product Description<span style="float: right;">
+            {% if description|length > 1900 %}
+            0/100
+            {% else %}
+            {% widthratio description|length 1900 100 %}/100
+            {% endif %}
+        </span></h5>
+        <div class="progress progress-radius-bg mb-3">
+            {% if description == "NA" %}
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"  style="width:100%"></div>
+            {% elif description|length < 500 %}
+            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{% widthratio description|length 1900 100 %}" aria-valuemin="0" aria-valuemax="100"  style="width:{% widthratio description|length 1900 100  %}%"></div>
+            {% else %}
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{% widthratio description|length 1900 100 %}" aria-valuemin="0" aria-valuemax="100"  style="width:{% widthratio description|length 1900 100  %}%"></div>
+            {% endif %}
+        </div>
+        </div>
+    <div class="col-12">
+        <div class="col-12 " style="overflow-x: auto; padding: 0;">
+            <table class="table table-striped" style="min-width: 500px !important;">
+                <thead> <tr><th class="text-left  recommended-width">Description Length</th><th class="text-left ">Recommended</th><th class="text-left ">Improvements Tips</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="col-2">
+                            <span>
+                                {% if description  == "NA" %} 
+                                0 
+                                {% else %}
+                                {{ description|length }}
+                                {% endif %}
+                            </span>
+                        </td>
+                        <td class="col-2">1900-2100</td>
+                        <td class="col-8 col-lg-8">
+                            <span>
+                                {% if description  == "NA" %}
+                                <p class="text-primary"><em>Tip: Improve your searchability in the Amazon by including more text in Product Description as per recommended length. Additionally, this will help your customers understand about the product. You may see increased impressions and conversion rate if you let Amazon and your customers know more about your product.</em></p>
+                                {% else %}
+                                {{ description }}
+                                {% endif %}
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>   
+<!--<Product Features>-->
+<div class="  col-12 mobile-padding-none" id="feaduresId" style="padding-top: 20px;">
+    <div class=" col-lg-4 col-md-5 col-12">
+        <h5 class="Bold">Product Features<span style="float: right;">
+            {% if features|length >= 5 %}
+            100/100
+            {% else %}
+            {% widthratio features|length 5 100 %}/100
+            {% endif %}
+        </span></h5>
+        <div class="progress progress-radius-bg  mb-3">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{% widthratio features|length 5 100 %}" aria-valuemin="0" aria-valuemax="100"  style="width:{% widthratio features|length 5 100  %}%">
+            </div>
+        </div>
+    </div>
+    <div class="  col-12">
+        <div class="col-12 " style="overflow-x: auto; padding: 0;">
+            <table class="table table-striped lxrtool-table " style="min-width: 500px !important;">
+                <thead> <tr><th class="text-left  recommended-width">Total Features</th><th class="text-left ">Recommended</th><th class="text-left ">Improvements Tips</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="col-2">
+                            <span>{{ features|length }}</span>
+                        </td>
+                        <td class="col-2">5 & above</td>
+                        <td class="col-8 col-lg-8">
+                            <span>
+                                <ul>
+                                {% for feature in features %}
+                                <li>{{ feature }}</li>
+                                {% endfor %}
+                                </ul>
+
+                                {% if features|length <= 3 %}
+                                <p class="text-primary"><em>Tip: Include as much detail as possible in separate bullet points that provide clarity about the Product features. Make sure to include your main keywords to improve your chances of ranking for the relevant search queries.</em></p>
+                                {% endif %}
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<Product Images>-->
+<div class="  col-12 mobile-padding-none" id="imagesId" style="padding-top: 20px;">
+    <div class=" col-lg-4 col-md-5 col-12">
+        <h5 class="Bold">Product Images<span style="float: right;">
+            {% if images >= 6 %}
+            100/100
+            {% else %}
+            {% widthratio images 6 100 %}/100
+            {% endif %}
+        </span></h5>
+        <div class="progress progress-radius-bg  mb-3">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{% widthratio images 6 100 %}" aria-valuemin="0" aria-valuemax="100"  style="width:{% widthratio images 6 100  %}%">
+            </div>
+        </div>
+    </div>
+    <div class="  col-12">
+        <div class="col-12 " style="overflow-x: auto; padding: 0;">
+            <table class="table table-striped lxrtool-table " style="min-width: 500px !important;">
+                <thead> <tr><th class="text-left  recommended-width">Total Images / Videos</th><th class="text-left ">Recommended</th><th class="text-left ">Improvements Tips</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="col-2">
+                            <span>Images: {{ images }}, Videos: {{ videos }}</span>
+                        </td>
+                        <td class="col-2">8+image(s)</td>
+                        <td class="col-8 col-lg-8">
+                            <span>
+                                <p class="text-primary"><em>Tip: Take the full advantage of one of the most important aspects of your product listing. You can add more images of your product from different views and possibly a video that helps customers understand the product better.</em></p>                            
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<Product Ratings>-->
+<div class="  col-12 mobile-padding-none" id="ratingsId" style="padding-top: 20px;">
+    <div class=" col-lg-4 col-md-5 col-12">
+        <h5 class="Bold">Product Ratings<span style="float: right;">
+            {% if ratings == "NA" %}
+            0/100
+            {% elif ratings >= 4.5 %}
+            100/100
+            {% else %}
+            {% widthratio ratings 5 100 %}/100
+            {% endif %}
+        </span></h5>
+        <div class="progress progress-radius-bg mb-3">
+            {% if ratings == "NA" %}
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"  style="width:100%"></div>
+            {% else %}
+            <div class="progress-bar {% if ratings < 3.8 %} bg-warning {% else %} bg-success {% endif %}" role="progressbar" aria-valuenow="{% widthratio ratings 5 100 %}" aria-valuemin="0" aria-valuemax="100"  style="width:{% widthratio ratings 5 100  %}%"></div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="  col-12">
+        <div class="col-12 " style="overflow-x: auto; padding: 0;">
+            <table class="table table-striped " style="min-width: 500px !important;">
+                <thead> <tr><th class="text-left recommended-width">Product Ratings</th><th class="text-left">Recommended</th><th class="text-left ">Improvements Tips</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="col-2">
+                            <span>{{ ratings }}</span>
+                        </td>
+                        <td class="col-2">4.5 & above</td>
+                        <td class="col-8 col-lg-8">
+                            <span>
+                                <p class="text-primary"><em>Tip: Ratings can add confidence about the product to the potential customers. Encourage your customers to provide their ratings.</em></p>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
