@@ -77,13 +77,13 @@ class LinkAnalyzerView(View):
             # Find product ratings
             try:
                 product_rating = soup.find("span", attrs={'class': 'a-icon-alt'}).string
-                if not isinstance(product_rating, str):
-                    product_rating = float(product_rating[0:3])
-                else:
+                if product_rating == "Previous page":
                     product_rating = "NA"
+                else:
+                    product_rating = float(product_rating[0:3])
             except AttributeError:
                 product_rating = "NA"
-        
+            
             context = {
                 "title" : product_title,
                 "description" : product_description,
